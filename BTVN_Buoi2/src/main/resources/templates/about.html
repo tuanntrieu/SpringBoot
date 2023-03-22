@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" th:href="@{/style1.css}">
+    <link rel="stylesheet" href="../static/style1.css">
+</head>
+<body>
+<div class="container">
+    <h1> DANH SÁCH SINH VIÊN</h1>
+    <table>
+        <thead>
+        <tr>
+            <th id="id">Mã sinh viên</th>
+            <th id="name">Họ và tên</th>
+            <th id="age">Tuổi</th>
+            <th id="department">Khoa</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item:${danhsach}">
+            <td th:text="*{item.msv}"></td>
+            <td th:text="*{item.ten}"></td>
+            <td th:text="*{item.tuoi}"></td>
+            <td th:text="*{item.khoa}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>yty</title>
+</head>
+<body>
+    <h1 th:text="${string}"></h1>
+<!--    <h1 th:text="${bien}"></h1>-->
+<!--<div th:object="${student}">-->
+<!--    <div th:text="*{msv}"></div>-->
+<!--    <div th:text="*{name}"></div>-->
+<!--</div>-->
+<div th:each="item:${list}">
+    <div th:text="*{item.getMsv()}"></div>
+    <div th:text="*{item.getName()}"></div>
+</div>
+<form th:action="@{/about}" method="get">
+    <label for="ten">Ten</label><br>
+    <input id="ten" name="search" tupe="text"><br>
+    <label for="tuoi">Tuoi</label><br>
+    <input id="tuoi" name="search1" tupe="text">
+    <input name="submit" type="submit">
+</form>
+
+<!--<form th:action="@{/test}" method="post">-->
+<!--    <input name="msv" tupe="text"><br>-->
+<!--    <input name="name" tupe="text"><br>-->
+<!--    <input value="submit" type="submit">-->
+<!--</form>-->
+
+
+
+</body>
+</html>

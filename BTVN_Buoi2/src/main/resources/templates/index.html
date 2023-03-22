@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Log-in</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body>
+<form class="form-login" th:action="@{/about}"  method="post">
+    <label for="user">Tên đăng nhập</label>
+    <input type="text" id="user" name="tenTK">
+    <label for="passworld">Mật khẩu</label>
+    <input type="passworld" id="passworld" name="matKhau">
+    <input type="submit" value="submit" class="sub">
+</form>
+</body>
+</html>

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table{
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+}
+tr, td, th{
+    border: 1px solid #fff;
+    height: 30px;
+    font-weight: 200;
+    background-color: #cccccc;
+    color: #000;
+    font-size: 18px;
+    font-weight: 300;
+}
+h1{
+    text-align:center;
+    margin: 10px;
+}
+th{
+    background-color: green;
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.container{
+    width: 80vw;
+    margin: auto;
+}
+#id{
+    width: 20%;
+}
+#name{
+    width: 30%;
+}
+#age {
+    width: 20%;
+}
+#department{
+    width: 30%;
+}
