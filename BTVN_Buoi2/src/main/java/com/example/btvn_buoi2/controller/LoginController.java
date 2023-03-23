@@ -15,7 +15,10 @@ public class LoginController {
     public String showLoginForm() {
         return "index";
     }
-    @RequestMapping(value = "/about", method = RequestMethod.GET)
+
+
+    public TaiKhoan taiKhoan = new TaiKhoan("taikhoan1", "123");
+    @RequestMapping(value="/about", method = RequestMethod.GET)
     public String danhSachSinhVien(Model model) {
         List<SinhVien> danhsach = Arrays.asList(
                 new SinhVien("Msv1", "Trieu Dang Tuan", 20, "CNTT"),
@@ -25,25 +28,12 @@ public class LoginController {
         model.addAttribute("danhsach", danhsach);
         return "about";
     }
-
-
-
-    public TaiKhoan taiKhoan = new TaiKhoan("taikhoan1", "123");
-
     @RequestMapping(value = "/about", method = RequestMethod.POST)
     public String about(@RequestParam("tenTK") String tk,@RequestParam("matKhau") String mk, Model model) {
 
         if (tk.compareTo(taiKhoan.getTenTk()) == 0 && mk.compareTo((taiKhoan.getMatKhau())) == 0){
-            List<SinhVien> danhsach = Arrays.asList(
-                    new SinhVien("Msv1", "Trieu Dang Tuan", 20, "CNTT"),
-                    new SinhVien("Msv2", "Pham Trung Tien", 20, "QLKD"),
-                    new SinhVien("Msv3", "Pham Duc Thang", 19, "CNTT")
-            );
-            model.addAttribute("danhsach", danhsach);
-            return "about";
-
+            return "redirect:about";
         }
-
        else{
            String s="Tai khoan khong hop le";
            model.addAttribute("message",s);
@@ -51,4 +41,5 @@ public class LoginController {
         }
 
     }
+
 }
