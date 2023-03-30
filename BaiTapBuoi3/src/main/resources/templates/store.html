@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{store.css}">
+    <link rel="stylesheet" href="../static/store.css">
+</head>
+<body>
+<div class="container">
+    <h1>Danh sách người dùng</h1>
+    <table>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Tên đăng nhập</th>
+            <th>Mật khẩu</th>
+            <th>Họ và tên</th>
+        </tr>
+        <tr th:each="item : ${list}">
+            <td th:text="*{item.id}"></td>
+            <td th:text="*{item.username}"></td>
+            <td th:text="*{item.password}"></td>
+            <td th:text="*{item.fullname}"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Controller
 public class LoginController {
-    @GetMapping("/")
+    @GetMapping("/index")
     public String showLoginForm() {
         return "index";
     }
@@ -35,9 +35,9 @@ public class LoginController {
             return "redirect:about";
         }
        else{
-           String s="Tai khoan khong hop le";
+           String s="Tài khoản không hợp lệ";
            model.addAttribute("message",s);
-            return "about2";
+            return "index";
         }
 
     }
