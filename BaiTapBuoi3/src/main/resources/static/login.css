@@ -17,7 +17,7 @@
 
 form {
     width: 25%;
-    height: 75%;
+    height: 80%;
     background-color: #ffffff;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
     border-radius: 5px;
@@ -89,4 +89,16 @@ input:focus{
     border-radius: 5px;
     background: #1877F2;
     color: white;
+}
+.message{
+    color: red;
+    justify-content: flex-start;
+    display: block;
+    margin: 0 0 20px;
+}
+#mess{
+    color: red;
+    justify-content: flex-start;
+    display: block;
+    margin: 0 0 20px;
 }

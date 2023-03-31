@@ -16,13 +16,14 @@
             <th>Mật khẩu</th>
             <th>Họ và tên</th>
         </tr>
-        <tr th:each="item : ${list}">
+        <tr th:each="item:${list}">
             <td th:text="*{item.id}"></td>
             <td th:text="*{item.username}"></td>
             <td th:text="*{item.password}"></td>
             <td th:text="*{item.fullname}"></td>
         </tr>
     </table>
+    <h4><a th:href="@{/viewAll}">Xem toàn bộ thông tin</a></h4>
 </div>
 </body>
 </html>

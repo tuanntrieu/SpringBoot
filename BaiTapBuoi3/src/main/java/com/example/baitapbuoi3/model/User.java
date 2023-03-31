@@ -48,4 +48,12 @@ public class User {
     public static void setCount(int count) {
         User.count = count;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
