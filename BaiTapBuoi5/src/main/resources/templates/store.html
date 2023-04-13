@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{store.css}">
+    <link rel="stylesheet" href="../static/store.css">
+</head>
+<body>
+<div class="container">
+    <h1>Danh sách người dùng</h1>
+    <table>
+        <tr>
+            <th id="id"  >ID</th>
+            <th id="username" >Username</th>
+            <th id="password">Password</th>
+            <th id="fullname">Fullname</th>
+            <th id="created">Created</th>
+            <th id="updated">Updated</th>
+            <th id="action" colspan="2">Action</th>
+        </tr>
+        <tr th:each="item:${list}">
+            <td th:text="*{item.id}"></td>
+            <td  th:text="*{item.username}"></td>
+            <td  th:text="*{item.password}"></td>
+            <td  th:text="*{item.fullname}"></td>
+            <td th:text="*{item.created}"></td>
+            <td th:text="*{item.updated}"></td>
+            <td><a th:href="@{/edit/{id}(id=*{item.id})}">Edit</a></td>
+            <td><a th:href="@{/delete/{id}(id=*{item.id})}">Delete</a></td>
+        </tr>
+    </table>
+    <h4><a th:href="@{/viewAll}">View All</a></h4>
+    <h4><a th:href="@{/register}">Create a new </a></h4>
+</div>
+</body>
+</html>
