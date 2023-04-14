@@ -89,4 +89,5 @@ public class User {
     public void setUpdated(Timestamp updated) {
         this.updated = updated;
     }
+
 }
