@@ -44,6 +44,22 @@ public class ApiController {
         return ResponseEntity.ok().body(currentUser.get());
     }
 
+    @PostMapping("api/user/{id}")
+    ResponseEntity<?> updateUser1(@PathVariable Long id, User user) {
+        Optional<User> currentUser = userRepository.findById(id);
+        if (user.getUsername() != null) {
+            currentUser.get().setUsername(user.getUsername());
+        }
+        if (user.getPassword() != null) {
+            currentUser.get().setPassword(user.getPassword());
+        }
+        if (user.getFullname() != null) {
+            currentUser.get().setFullname(user.getFullname());
+        }
+        userRepository.save(currentUser.get());
+        return ResponseEntity.ok().body(currentUser.get());
+    }
+
     @DeleteMapping("/api/user/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
         userRepository.deleteById(id);
