@@ -1,4 +1,4 @@
-package com.example.baitapbuoi5.exception;
+package com.example.baitapbuoi6.exception;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

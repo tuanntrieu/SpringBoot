@@ -2,6 +2,7 @@ package com.example.baitapbuoi5.controller;
 
 import com.example.baitapbuoi5.User;
 import com.example.baitapbuoi5.UserRepository;
+import com.example.baitapbuoi5.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class ApiController {
     @GetMapping("/api/user/{id}")
     public ResponseEntity<?> getUserById(@PathVariable Long id) {
         Optional<User> user = userRepository.findById(id);
+        if(user==null){
+            throw new NotFoundException("Không tìm thấy người dùng có id là " + id);
+        }
         return ResponseEntity.ok().body(user);
     }
 
