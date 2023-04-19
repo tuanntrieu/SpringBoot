@@ -20,9 +20,9 @@ public class Phone {
     private int id;
     private String name;
     private String brand;
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id")
-    @JsonBackReference
+
     private Student student;
 
     public Phone(String name, String brand, Student student) {

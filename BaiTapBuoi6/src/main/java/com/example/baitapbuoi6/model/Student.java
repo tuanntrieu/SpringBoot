@@ -24,13 +24,13 @@ public class Student {
     private String name;
     private String address;
 
-    @OneToMany(mappedBy = "student",fetch = FetchType.EAGER)
-
+    @OneToMany(mappedBy = "student",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Subject> subjects;
 
 
-    @OneToOne(mappedBy = "student",fetch = FetchType.EAGER)
-    @JsonManagedReference
+    @OneToOne(mappedBy = "student",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JsonIgnore
     private Phone phone;
 
     public Student(String name, String address) {

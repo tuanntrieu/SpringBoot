@@ -19,9 +19,9 @@ public class Subject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id")
-    @JsonIgnore
+
     private Student student;
 
     public Subject(String name, Student student) {

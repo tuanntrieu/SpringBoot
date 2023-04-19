@@ -1,32 +1,37 @@
 package com.example.baitapbuoi6.controller;
 
 import com.example.baitapbuoi6.dto.StudentDTO;
-import com.example.baitapbuoi6.model.Student;
-import com.example.baitapbuoi6.repository.StudentRepository;
+import com.example.baitapbuoi6.service.IStudent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/api/")
 public class StudentController {
 
     @Autowired
-    StudentRepository studentRepository;
+    IStudent studentService;
 
     @PostMapping("/create_student")
     public ResponseEntity<?> createNewStudent(@RequestBody StudentDTO studentDTO) {
-        Student student = new Student(studentDTO.getName(), studentDTO.getAddress());
-        return ResponseEntity.ok(studentRepository.save(student));
+        return ResponseEntity.ok(studentService.createStudent(studentDTO));
+    }
+
+    @DeleteMapping("/deleteStudent/{id}")
+    public ResponseEntity<?> deleteStudent(@PathVariable int id) {
+        studentService.deleteStudentById(id);
+        return ResponseEntity.ok("successful delete");
+    }
+
+    @PutMapping("/updateStudent/{id}")
+    public ResponseEntity<?> updateStudent(@PathVariable int id, @RequestBody StudentDTO studentDTO) {
+        return ResponseEntity.ok(studentService.updateStudentById(id, studentDTO));
     }
 
     @GetMapping("/viewAllStudent")
     public ResponseEntity<?> viewAllStudent() {
-        return ResponseEntity.ok().body(studentRepository.findAll());
+        return ResponseEntity.ok().body(studentService.findAllStudent());
     }
 
 }
