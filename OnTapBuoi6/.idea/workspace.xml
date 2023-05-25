@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2db9f8bf-a393-4e63-93f4-42b665deabad" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/config/ConfigCloudinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/repo/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi7/src/main/java/com/example/buoi7/utlts/UploadFileCloudinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/enums/EnumRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/repo/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/repo/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/service/UserDetailImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Buoi9/src/main/java/com/example/buoi9/service/UserDetailServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/dto/UserDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/enums/EnumRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/filter/AuthTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/jwt/JwtEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/jwt/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/repo/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/repo/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/service/UserDetailImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CodeBuoi9/src/main/java/com/example/codebuoi9/service/UserDetailServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/config/ConfigCloudinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/config/ModelMapperConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/controller/StudentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/controller/TeacherController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/dto/CourseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/dto/StudentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/dto/TeacherDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/exception/CustomExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/exception/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/model/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/model/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/model/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/repo/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/repo/StudenrRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/repo/TeacherRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/service/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/service/StudentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/service/TeacherService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/service/imp/StudentServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/service/imp/TeacherServiceImp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../OnTapBuoi7/src/main/java/com/example/ontapbuoi7/utils/UploadFileCloudinary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BaiTapBuoi3/src/main/java/com/example/baitapbuoi3/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BaiTapBuoi3/src/main/java/com/example/baitapbuoi3/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/OnTapBuoi6Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/controller/AuthorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/controller/BookController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/controller/PublisherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/dto/AuthorDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/dto/BookDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/dto/PublisherDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/model/Author.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/model/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/model/Publisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/repo/AuthorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/repo/BookRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/repo/PublisherRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/service/IAuthorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/service/IBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/service/IPublisherService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/service/imp/ImpAuthorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/service/imp/ImpBookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/java/com/example/ontapbuoi6/service/imp/ImpPublisherService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnTapBuoi6/src/test/java/com/example/ontapbuoi6/OnTapBuoi6ApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2Pb54vRY6UGRtlFBuiSqHZDMksZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OnTapBuoi7" />
+  </component>
+  <component name="RunManager">
+    <configuration name="OnTapBuoi6Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="OnTapBuoi6" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.ontapbuoi6.OnTapBuoi6Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2db9f8bf-a393-4e63-93f4-42b665deabad" name="Changes" comment="" />
+      <created>1683712753033</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683712753033</updated>
+      <workItem from="1683712754312" duration="112000" />
+      <workItem from="1683731051317" duration="835000" />
+      <workItem from="1684913337709" duration="399000" />
+      <workItem from="1684915633588" duration="20000" />
+      <workItem from="1685032143475" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

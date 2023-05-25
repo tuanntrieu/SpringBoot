@@ -1,6 +1,5 @@
 package com.example.baitapbuoi3.controller;
 
-import com.example.baitapbuoi3.model.Store;
 import com.example.baitapbuoi3.model.User;
 import com.example.baitapbuoi3.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Scanner;
 
 @Controller
 public class UserController {
@@ -47,7 +47,6 @@ public class UserController {
         model.addAttribute("mess","Đăng ký thành công");
         return"register";
     }
-
     @GetMapping("/viewAll")
     public ResponseEntity<List<User>> users() {
         return ResponseEntity.ok().body(userService.getUser());
