@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -18,12 +19,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class UserDTO {
 
-    @NotEmpty(message = "Fullname is not empty")
+    @NotNull(message = "Fullname is not null")
     private String fullname;
 
     private String address;
 
     private String email;
+
 
     private Date birthday;
 

@@ -11,6 +11,8 @@ import com.example.baitapbuoi9.services.UserService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,13 +36,11 @@ public class UserServiceImp implements UserService {
 
     @Override
     public User createNewUser(UserDTO userDTO) {
-
         User user = modelMapper.map(userDTO, User.class);
         user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         Role role = roleRepository.findRoleByRoleName(EnumRole.ROLE_USER);
         user.setRole(role);
-
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class UserServiceImp implements UserService {
             user.get().setEmail(userDTO.getEmail());
             user.get().setBirthday(userDTO.getBirthday());
             user.get().setUsername(userDTO.getUsername());
-            user.get().setPassword(userDTO.getPassword());
+            user.get().setPassword(passwordEncoder.encode(userDTO.getPassword()));
             return userRepository.save(user.get());
         }
 
@@ -84,14 +84,20 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> getAllUser() {
-        return userRepository.findAll();
+    public List<User> getAllUser(int page,int size) {
+
+        if (page < 0) {
+            return userRepository.findAll();
+        }
+        return userRepository.findAll(PageRequest.of(page, size, Sort.by("fullname").descending())).getContent();
     }
 
     @Override
-    public User searchUserByName(String username) {
-        User user = userRepository.searchUserByName(username);
-        
-       return null;
+    public List<User> searchUserByName(String name) {
+        List<User> users = userRepository.searchUserByName(name);
+        if (users.isEmpty()) {
+            throw new NotFoundException("Khong co hoc sinh nao");
+        }
+        return users;
     }
 }

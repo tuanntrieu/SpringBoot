@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
@@ -19,7 +20,9 @@ public class ProductDTO {
     @Min(1)
     private int count;
 
-    private String image;
+    MultipartFile multipartFile;
 
     private String description;
+
+    private int category_id;
 }

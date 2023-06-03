@@ -28,7 +28,8 @@ public class Product {
 
     private String description;
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name="product_id")
+    @JoinColumn(name="category_id")
     private Category category;
 }

@@ -1,6 +1,7 @@
 package com.example.baitapbuoi9.model;
 
 import com.example.baitapbuoi9.enums.EnumRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,7 @@ public class Role {
     @Enumerated(value = EnumType.STRING)
     private EnumRole roleName;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "role",fetch = FetchType.EAGER)
     private List<User> users;
 }

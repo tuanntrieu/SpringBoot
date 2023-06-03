@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductRepository extends JpaRepository<Product,Integer> {
 
-    @Query(value ="select * from products where product_name like '%?1%'" ,nativeQuery = true)
+    @Query(value ="select * from products where product_name like %?1%" ,nativeQuery = true)
     Product searchProductByName(String product_name);
 }

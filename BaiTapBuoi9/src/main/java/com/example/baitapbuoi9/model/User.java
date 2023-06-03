@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -26,6 +27,7 @@ public class User {
 
     private String email;
 
+
     private Date birthday;
 
     private String username;
@@ -33,6 +35,7 @@ public class User {
     private String password;
 
     @ManyToOne()
+
     @JoinColumn(name="role_id")
     private Role role;
 

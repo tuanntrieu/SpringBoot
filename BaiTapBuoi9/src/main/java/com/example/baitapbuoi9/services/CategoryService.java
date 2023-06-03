@@ -13,13 +13,13 @@ public interface CategoryService {
 
     Category createNewCategory(CategoryDTO categoryDTO);
 
-   Category getCategoryById(int id);
+    Category getCategoryById(int id);
 
     List<Category> getAllCategory();
 
-   Category editCategoryById(int id);
+    Category editCategoryById(int id,CategoryDTO categoryDTO);
 
     void deleteCategoryById(int id);
 
-    Category searchCategoryByName(String product_name);
+    List<Category> searchCategoryByName(String category_name);
 }

@@ -49,9 +49,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling().authenticationEntryPoint(authEntryPointJWT).and()
                 .authorizeRequests()
                 .antMatchers("/api/v1/user/**").
-                hasAnyAuthority("ROLE_USER", "ROLE_ADMIN")
-                .antMatchers("/api/v1/admin/**").hasRole("ADMIN")
-                .anyRequest().permitAll()
+                hasAuthority("ROLE_USER")
+                .antMatchers("/api/v1/admin/**").
+                hasAuthority("ROLE_ADMIN")
+                .antMatchers("/api/v1/all/**").permitAll()
                 .and()
                 //UsernamePasswordAuthenticationFilter : bộ lọc mặc định của Spring Boot
                 .addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class)//Giai thich

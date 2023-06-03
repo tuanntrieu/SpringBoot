@@ -12,11 +12,11 @@ public interface ProductService {
 
     Product getProductById(int id);
 
-    List<Product> getAllProduct();
+    List<Product> getAllProduct(int page,int size);
 
-    Product editProductById(int id);
+    Product editProductById(int id,ProductDTO productDTO);
 
     void deleteProductById(int id);
 
-    Product searchProductByName(String product_name);
+    List<Product> searchProductByName(String product_name);
 }

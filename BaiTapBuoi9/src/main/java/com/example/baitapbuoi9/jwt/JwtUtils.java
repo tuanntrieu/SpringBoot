@@ -5,10 +5,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
-@Component
+@Service
 public class JwtUtils {
     private final static Logger log = LoggerFactory.getLogger(JwtUtils.class);
     @Value("${jwt.secret}")
@@ -17,11 +18,22 @@ public class JwtUtils {
     @Value("${jwt.expirationMs}")
     private Long expirationMs;
 
+    @Value("${jwt.due.refreshToken}")
+    private Long dueRefreshToken;
+
     public String generateTokenByUsername(String username) {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(new Date().getTime() + expirationMs))
+                .signWith(SignatureAlgorithm.HS256, secretKey)
+                .compact();
+    }
+    public String generateRefreshTokenByUsername(String username) {
+        return Jwts.builder()
+                .setSubject(username)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(new Date().getTime() + dueRefreshToken))
                 .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }

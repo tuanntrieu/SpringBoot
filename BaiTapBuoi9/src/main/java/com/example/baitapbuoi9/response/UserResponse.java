@@ -23,5 +23,7 @@ public class UserResponse {
 
     private String accessToken;
 
+    private String refreshToken;
+
     private Collection<? extends GrantedAuthority> authorities;
 }
