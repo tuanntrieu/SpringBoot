@@ -1,6 +1,7 @@
 package com.example.baitapbuoi9.controller;
 
 import com.example.baitapbuoi9.dto.UserDTO;
+import com.example.baitapbuoi9.email.MailSender;
 import com.example.baitapbuoi9.jwt.JwtUtils;
 import com.example.baitapbuoi9.model.User;
 import com.example.baitapbuoi9.repositories.RoleRepository;
@@ -19,12 +20,14 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Random;
 
 
 @Controller
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class UserController {
     @Autowired
     AuthenticationManager authenticationManager;
@@ -34,6 +37,9 @@ public class UserController {
     private RoleRepository roleRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private MailSender mailSender;
 
     @Autowired
     private JwtUtils jwtUtils;
@@ -96,6 +102,21 @@ public class UserController {
     @GetMapping("/admin/getAllUser")
     public ResponseEntity<?> findAllUser(@RequestParam(name = "page", required = false) int page,
                                          @RequestParam(name = "size", required = false, defaultValue = "2") int size) {
-        return ResponseEntity.ok(userService.getAllUser(page,size));
+        return ResponseEntity.ok(userService.getAllUser(page, size));
+    }
+
+    @PatchMapping("/all/forgot_password/{username}")
+    public ResponseEntity<?> forgotPassword(@PathVariable String username) throws MessagingException {
+        String allowedChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()";
+        StringBuilder passwordBuilder = new StringBuilder();
+
+        Random random = new Random();
+        for (int i = 0; i < 8; i++) {
+            int randomIndex = random.nextInt(allowedChars.length());
+            passwordBuilder.append(allowedChars.charAt(randomIndex));
+        }
+        String password= passwordBuilder.toString();
+
+        return ResponseEntity.ok(userService.updatePassword(username,password));
     }
 }

@@ -4,6 +4,7 @@ import com.example.baitapbuoi9.dto.UserDTO;
 import com.example.baitapbuoi9.model.User;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,4 +22,6 @@ public interface UserService {
     List<User> getAllUser(int page,int size);
 
     List<User> searchUserByName(String name);
+
+    User updatePassword(String username,String password) throws MessagingException;
 }

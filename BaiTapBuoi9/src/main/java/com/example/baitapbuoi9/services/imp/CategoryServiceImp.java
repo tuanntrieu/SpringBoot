@@ -19,7 +19,7 @@ public class CategoryServiceImp implements CategoryService {
     @Autowired
     CategoryRepository categoryRepository;
     @Autowired
-    ModelMapper modelMapper;
+    private ModelMapper modelMapper;
 
     @Override
     public Category createNewCategory(CategoryDTO categoryDTO) {
@@ -53,7 +53,7 @@ public class CategoryServiceImp implements CategoryService {
             return null;
         });
         category = modelMapper.map(categoryDTO, Category.class);
-        category.setId(id);
+        //category.setId(id);
         return categoryRepository.save(category);
     }
 

@@ -6,5 +6,8 @@ import javax.mail.MessagingException;
 
 
 public interface MailSender {
-    //void sentMail(String to,String email) throws MessagingException;//to: gui den ai, email: cua minh
+
+    void sentMailBirthday(String to,String message) throws MessagingException;
+
+    void sentMailPassword(String to, String message) throws MessagingException;
 }

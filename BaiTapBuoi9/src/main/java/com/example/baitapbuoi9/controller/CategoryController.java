@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class CategoryController {
     @Autowired
     CategoryService categoryService;
@@ -46,5 +46,4 @@ public class CategoryController {
     public ResponseEntity<?> findAllCategory() {
         return ResponseEntity.ok(categoryService.getAllCategory());
     }
-
 }

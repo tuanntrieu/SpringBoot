@@ -8,15 +8,17 @@ import java.util.List;
 
 @Service
 public interface ProductService {
-    Product createNewProduct(ProductDTO productDTO);
+    Product createNewProduct(ProductDTO productDTO) throws Exception;
 
     Product getProductById(int id);
 
-    List<Product> getAllProduct(int page,int size);
+    List<Product> getAllProduct(int page, int size);
 
-    Product editProductById(int id,ProductDTO productDTO);
+    Product editProductById(int id, ProductDTO productDTO);
 
     void deleteProductById(int id);
 
     List<Product> searchProductByName(String product_name);
+
+    List<Product> searchProductByCategoryId(int id);
 }

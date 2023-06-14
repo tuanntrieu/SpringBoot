@@ -1,8 +1,10 @@
 package com.example.baitapbuoi9.services.imp;
 
 import com.example.baitapbuoi9.dto.UserDTO;
+import com.example.baitapbuoi9.email.MailSender;
 import com.example.baitapbuoi9.enums.EnumRole;
 import com.example.baitapbuoi9.exception.NotFoundException;
+import com.example.baitapbuoi9.exception.UsernameAlreadyExistsException;
 import com.example.baitapbuoi9.model.Role;
 import com.example.baitapbuoi9.model.User;
 import com.example.baitapbuoi9.repositories.RoleRepository;
@@ -16,6 +18,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,13 +37,26 @@ public class UserServiceImp implements UserService {
     @Autowired
     RoleRepository roleRepository;
 
+    @Autowired
+    MailSender mailSender;
     @Override
     public User createNewUser(UserDTO userDTO) {
-        User user = modelMapper.map(userDTO, User.class);
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
-        Role role = roleRepository.findRoleByRoleName(EnumRole.ROLE_USER);
-        user.setRole(role);
-        return userRepository.save(user);
+        List<User> users = userRepository.findAll();
+        boolean check = true;
+        for (User tmp : users) {
+            if (userDTO.getUsername().compareTo(tmp.getUsername()) == 0) {
+                check = false;
+            }
+        }
+        if (check) {
+            User user = modelMapper.map(userDTO, User.class);
+            user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+            Role role = roleRepository.findRoleByRoleName(EnumRole.ROLE_USER);
+            user.setRole(role);
+            return userRepository.save(user);
+        } else {
+            throw new UsernameAlreadyExistsException("Tên đăng nhập đã tồn tại");
+        }
     }
 
     @Override
@@ -84,7 +100,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public List<User> getAllUser(int page,int size) {
+    public List<User> getAllUser(int page, int size) {
 
         if (page < 0) {
             return userRepository.findAll();
@@ -100,4 +116,20 @@ public class UserServiceImp implements UserService {
         }
         return users;
     }
+
+
+    @Override
+    public User updatePassword(String username, String password) throws MessagingException {
+        User user = userRepository.findUserByUsername(username);
+        if (Objects.isNull(user)) {
+            throw new NotFoundException("Khong co nguoi dung nao co ten dang nhap: " + username);
+        } else {
+            mailSender.sentMailPassword(user.getEmail(),password);
+
+            userRepository.updatePassword(username, password);
+            user.setPassword(passwordEncoder.encode(password));
+            return userRepository.save(user);
+        }
+    }
+
 }

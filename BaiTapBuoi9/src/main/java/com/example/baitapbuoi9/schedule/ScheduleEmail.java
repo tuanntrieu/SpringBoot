@@ -9,11 +9,11 @@ import javax.mail.MessagingException;
 
 @Component
 public class ScheduleEmail {
-//    @Autowired
-//    EmailService emailService;
-//
-//    @Scheduled(fixedRate = 10000)
-//    void sentMailSchedule() throws MessagingException {
-//        emailService.sentMail("trieudangtuann@gmail.com","Xin chao ae");
-//    }
+    @Autowired
+    EmailService emailService;
+
+    @Scheduled(cron = " 0 30 18  * * *")
+    void sentMailSchedule() throws MessagingException {
+        emailService.sentMailBirthday("trieudangtuan18032003@gmail.com", "Happy Birthday");
+    }
 }
